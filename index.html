@@ -277,9 +277,9 @@
   
   <div class="game-area" id="game-area">
     <div class="bins">
-      <div class="bin paper" data-type="paper"><div class="bin-icon">🗂️</div>Папер</div>
+      <div class="bin paper" data-type="paper"><div class="bin-icon">🗂️</div>Папір</div>
       <div class="bin plastic" data-type="plastic"><div class="bin-icon">🥤</div>Пластик</div>
-      <div class="bin glass" data-type="glass"><div class="bin-icon">🏺</div>Скло</div>
+      <div class="bin glass" data-type="glass"><div class="bin-icon">🥃</div>Скло</div>
       <div class="bin organic" data-type="organic"><div class="bin-icon">🍎</div>Органіка</div>
       <div class="bin metal" data-type="metal"><div class="bin-icon">🥫</div>Метал</div>
     </div>
@@ -313,41 +313,73 @@
     };
 
     const defaultWasteItems = [
-      { id: 1, name: "Газета", type: "paper", icon: "📰" }, { id: 2, name: "Зошит", type: "paper", icon: "📓" },
-      { id: 3, name: "Картон", type: "paper", icon: "📦" }, { id: 4, name: "Конверт", type: "paper", icon: "✉️" },
-      { id: 5, name: "Журнал", type: "paper", icon: "📖" }, { id: 6, name: "Чек", type: "paper", icon: "🧾" },
-      { id: 7, name: "Коробка", type: "paper", icon: "🗃️" }, { id: 8, name: "Лист А4", type: "paper", icon: "📄" },
-      { id: 9, name: "Пляшка ПЕТ", type: "plastic", icon: "🍼" }, { id: 10, name: "Пакет", type: "plastic", icon: "🛍️" },
-      { id: 11, name: "Контейнер", type: "plastic", icon: "🥡" }, { id: 12, name: "Трубочка", type: "plastic", icon: "🥤" },
-      { id: 13, name: "Зубна щітка", type: "plastic", icon: "🪥" }, { id: 14, name: "Ручка", type: "plastic", icon: "🖊️" },
-      { id: 15, name: "Флакон", type: "plastic", icon: "🧴" }, { id: 16, name: "Іграшка", type: "plastic", icon: "🧸" },
-      { id: 17, name: "Скляна банка", type: "glass", icon: "🏺" }, { id: 18, name: "Винна пляшка", type: "glass", icon: "🍾" },
-      { id: 19, name: "Склянка", type: "glass", icon: "🥃" }, { id: 20, name: "Ваза", type: "glass", icon: "💎" },
-      { id: 21, name: "Графин", type: "glass", icon: "🫗" }, { id: 22, name: "Дитяча баночка", type: "glass", icon: "👶" },
-      { id: 23, name: "Парфуми", type: "glass", icon: "🌸" }, { id: 24, name: "Окуляри", type: "glass", icon: "👓" },
-      { id: 25, name: "Яблуко", type: "organic", icon: "🍎" }, { id: 26, name: "Лушпиння", type: "organic", icon: "🥔" },
-      { id: 27, name: "Кавова гуща", type: "organic", icon: "☕" }, { id: 28, name: "Шкаралупа", type: "organic", icon: "🥚" },
-      { id: 29, name: "Бананова шкірка", type: "organic", icon: "🍌" }, { id: 30, name: "Опале листя", type: "organic", icon: "🍂" },
-      { id: 31, name: "Кістка", type: "organic", icon: "🦴" }, { id: 32, name: "Огірок", type: "organic", icon: "🥒" },
-      { id: 33, name: "Консерва", type: "metal", icon: "🥫" }, { id: 34, name: "Кришечка", type: "metal", icon: "🔩" },
-      { id: 35, name: "Фольга", type: "metal", icon: "🍫" }, { id: 36, name: "Ложка/Вилка", type: "metal", icon: "🥄" },
-      { id: 37, name: "Цвях", type: "metal", icon: "📎" }, { id: 38, name: "Кастрюля", type: "metal", icon: "🍳" },
-      { id: 39, name: "Банка фарби", type: "metal", icon: "🎨" }, { id: 40, name: "Монета", type: "metal", icon: "🪙" }
+      { id: 1, name: "Газета", type: "paper", icon: "📰" },
+	  { id: 2, name: "Зошит", type: "paper", icon: "📓" },
+      { id: 3, name: "Картон", type: "paper", icon: "📦" },
+	  { id: 4, name: "Конверт", type: "paper", icon: "✉️" },
+      { id: 5, name: "Журнал", type: "paper", icon: "📖" },
+	  { id: 6, name: "Чек", type: "paper", icon: "🧾" },
+      { id: 7, name: "Коробка", type: "paper", icon: "🗃️" },
+	  { id: 8, name: "Лист А4", type: "paper", icon: "📄" },
+      { id: 9, name: "Пляшка ПЕТ", type: "plastic", icon: "🍼" },
+	  { id: 10, name: "Пакет", type: "plastic", icon: "🛍️" },
+      { id: 11, name: "Контейнер", type: "plastic", icon: "🥡" },
+	  { id: 12, name: "Трубочка", type: "plastic", icon: "🥤" },
+      { id: 13, name: "Диск", type: "plastic", icon: "💿" },
+	  { id: 14, name: "Ручка", type: "plastic", icon: "🖊️" },
+      { id: 15, name: "Флакон", type: "plastic", icon: "🧴" },
+	  { id: 16, name: "Іграшка", type: "plastic", icon: "🧸" },
+      { id: 17, name: "Скляна банка", type: "glass", icon: "🏺" },
+	  { id: 18, name: "Винна пляшка", type: "glass", icon: "🍾" },
+      { id: 19, name: "Склянка", type: "glass", icon: "🥃" },
+	  { id: 20, name: "Ваза", type: "glass", icon: "⚱️" },
+      { id: 21, name: "Графин", type: "glass", icon: "🍶" },
+	  { id: 22, name: "Дитяча баночка", type: "glass", icon: "👶" },
+      { id: 23, name: "Пляшка парфумів", type: "glass", icon: "🌸" },
+	  { id: 24, name: "Окуляри", type: "glass", icon: "👓" },
+      { id: 25, name: "Яблуко", type: "organic", icon: "🍎" },
+	  { id: 26, name: "Лушпиння", type: "organic", icon: "🥔" },
+      { id: 27, name: "Кавова гуща", type: "organic", icon: "☕" },
+	  { id: 28, name: "Шкаралупа", type: "organic", icon: "🥚" },
+      { id: 29, name: "Бананова шкірка", type: "organic", icon: "🍌" },
+	  { id: 30, name: "Опале листя", type: "organic", icon: "🍂" },
+      { id: 31, name: "Кістка", type: "organic", icon: "🦴" },
+	  { id: 32, name: "Огірок", type: "organic", icon: "🥒" },
+      { id: 33, name: "Консерва", type: "metal", icon: "🥫" },
+	  { id: 34, name: "Болт", type: "metal", icon: "🔩" },
+      { id: 35, name: "Фольга", type: "metal", icon: "🍫" },
+	  { id: 36, name: "Ложка", type: "metal", icon: "🥄" },
+      { id: 37, name: "Шпилька", type: "metal", icon: "🧷" },
+	  { id: 38, name: "Сковорода", type: "metal", icon: "🍳" },
+      { id: 39, name: "Банка фарби", type: "metal", icon: "🎨" },
+	  { id: 40, name: "Старий ключ", type: "metal", icon: "🗝️" }
     ];
 
     const defaultFacts = [
-      "🗞️ 1 тонна макулатури зберігає 17 дерев!", "🥤 Пластикова пляшка розкладається до 500 років.",
-      "🏺 Скло можна переробляти нескінченно без втрати якості.", "🍎 Органічні відходи на звалищі виділяють метан.",
-      "🥫 Алюмінієву банку переробляють за 60 днів!", "📦 Картон розкладається 2-3 місяці, пластик — століття.",
-      "♻️ Переробка 1 т пластику економить до 1000 л нафти.", "🌳 Дерева поглинають ~22 кг CO₂ на рік.",
-      "🔋 Одна батарейка забруднює 400 л води.", "📊 В Україні переробляється лише ~10% відходів.",
-      "👕 Одна джинсова пара вимагає ~7500 л води.", "📄 Переробка паперу зменшує викиди CO₂ на 37%.",
-      "🌊 Щороку в океан потрапляє 8 млн тонн пластику.", "🍽️ Багаторазові пакети екологічніші при 100+ використаннях.",
-      "💡 LED-лампи споживають на 75% менше енергії.", "🚲 1 км на велосипеді замість авто економить ~0.2 кг CO₂.",
-      "📱 Виробництво одного смартфона генерує ~70 кг відходів.", "☕ Кавова гуща — чудове добриво для рослин.",
-      "🐝 Бджоли запилюють 75% сільськогосподарських культур.", "🌧️ Кислотні дощі виникають через викиди SO₂ та NOₓ.",
-      "🌿 Компостування зменшує обсяг сміття на 30-50%.", "📦 Повторне використання коробки економить 91% енергії.",
-      "🌍 Кожна людина генерує в середньому 0.7 кг сміття на день.", "💧 Переробка паперу економить 50% води.",
+      "🗞️ 1 тонна макулатури зберігає 17 дерев!",
+	  "🥤 Пластикова пляшка розкладається до 500 років.",
+      "🏺 Скло можна переробляти нескінченно без втрати якості.",
+	  "🍎 Органічні відходи на звалищі виділяють метан.",
+      "🥫 Алюмінієву банку переробляють за 60 днів!",
+	  "📦 Картон розкладається 2-3 місяці, пластик — століття.",
+      "♻️ Переробка 1 т пластику економить до 1000 л нафти.",
+	  "🌳 Дерева поглинають ~22 кг CO₂ на рік.",
+      "🔋 Одна батарейка забруднює 400 л води.",
+	  "📊 В Україні переробляється лише ~10% відходів.",
+      "👕 Одна джинсова пара вимагає ~7500 л води.",
+	  "📄 Переробка паперу зменшує викиди CO₂ на 37%.",
+      "🌊 Щороку в океан потрапляє 8 млн тонн пластику.",
+	  "🍽️ Багаторазові пакети екологічніші при 100+ використаннях.",
+      "💡 LED-лампи споживають на 75% менше енергії.",
+	  "🚲 1 км на велосипеді замість авто економить ~0.2 кг CO₂.",
+      "📱 Виробництво одного смартфона генерує ~70 кг відходів.",
+	  "☕ Кавова гуща — чудове добриво для рослин.",
+      "🐝 Бджоли запилюють 75% сільськогосподарських культур.",
+	  "🌧️ Кислотні дощі виникають через викиди SO₂ та NOₓ.",
+      "🌿 Компостування зменшує обсяг сміття на 30-50%.",
+	  "📦 Повторне використання коробки економить 91% енергії.",
+      "🌍 Кожна людина генерує в середньому 0.7 кг сміття на день.",
+	  "💧 Переробка паперу економить 50% води.",
       "♻️ Світова економіка відходів оцінюється в $500 млрд щороку."
     ];
 
